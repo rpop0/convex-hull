@@ -4,6 +4,10 @@
 #include "stack"
 #include "Point.h"
 
+#include "fstream";
+
+std::ifstream f("points.txt");
+
 Point p0;
 
 std::ostream& operator<<(std::ostream& os, const Point& obj){ //Overloading output operator.
@@ -40,7 +44,7 @@ Point nextToTop(std::stack<Point> &S)
 }
 
 
-int compare(const void *vp1, const void *vp2)
+int compare(const void *vp1, const void *vp2) //Function to compare two points for qsort.
 {
     Point *p1 = (Point *)vp1;
     Point *p2 = (Point *)vp2;
@@ -61,16 +65,16 @@ int compare(const void *vp1, const void *vp2)
 void convexHull(std::vector<Point>& points){
     int ymin = points[0].getY();
     int min = 0;
-    for(std::size_t i=1; i<points.size();i++){
+    for(std::size_t i=1; i<points.size();i++){ //Finding the smallest y.
         int y = points[i].getY();
         if((y < ymin) or (ymin == y and points[i].getX() < points[min].getX())){
             ymin = points[i].getY();
             min = i;
         }
     }
-    std::swap(points[0], points[min]);
+    std::swap(points[0], points[min]); //Making it the first element.
     p0 = points[0];
-    std::qsort(&points[1], points.size()-1, sizeof(Point), compare);
+    std::qsort(&points[1], points.size()-1, sizeof(Point), compare); //Had to use std::qsort, no matter what I did, I could not get std::sort to work.
     int m = 1;
     for(std::size_t i=1; i<points.size();i++){
         while (i < points.size() - 1 and orientation(p0, points[i], points[i+1]) == 0){
@@ -106,9 +110,13 @@ void convexHull(std::vector<Point>& points){
 
 
 int main() {
-    std::vector<Point> points {{-7,8},{-4,6},{2,6},{6,4},{8,6},{7,-2},{4,-6},{8,-7},{0,0},
-                               {3,-2},{6,-10},{0,-6},{-9,-5},{-8,-2},{-8,0},{-10,3},{-2,2},{-10,4}};
-//    std::vector<Point> points {{0, 3}, {1, 1}, {2, 2}, {4, 4},{0, 0}, {1, 2}, {3, 1}, {3, 3}};
+    std::vector<Point> points;
+    while(!f.eof()){
+        int x,y;
+        f>>x>>y;
+        points.push_back(Point(x,y)); //Placing all of the points from the file in the vector.s
+    }
+    f.close();
     convexHull(points);
     return 0;
 }

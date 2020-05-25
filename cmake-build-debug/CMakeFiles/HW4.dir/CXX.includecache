@@ -13,8 +13,6 @@ iostream
 /home/rozi/Documents/Programming/ADS/HW4/main.cpp
 iostream
 -
-fstream
--
 vector
 /home/rozi/Documents/Programming/ADS/HW4/vector
 algorithm
@@ -23,4 +21,6 @@ stack
 /home/rozi/Documents/Programming/ADS/HW4/stack
 Point.h
 /home/rozi/Documents/Programming/ADS/HW4/Point.h
+fstream
+/home/rozi/Documents/Programming/ADS/HW4/fstream
 
