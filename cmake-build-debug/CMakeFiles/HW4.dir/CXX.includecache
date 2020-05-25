@@ -13,6 +13,8 @@ iostream
 /home/rozi/Documents/Programming/ADS/HW4/main.cpp
 iostream
 -
+fstream
+-
 vector
 /home/rozi/Documents/Programming/ADS/HW4/vector
 algorithm
