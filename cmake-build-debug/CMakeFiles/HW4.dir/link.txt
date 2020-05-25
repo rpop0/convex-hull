@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/HW4.dir/main.cpp.o CMakeFiles/HW4.dir/Point.cpp.o  -o HW4 

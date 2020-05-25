@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rozi/Documents/Programming/ADS/HW4/Point.h
+iostream
+/home/rozi/Documents/Programming/ADS/HW4/iostream
+
+/home/rozi/Documents/Programming/ADS/HW4/main.cpp
+iostream
+-
+vector
+/home/rozi/Documents/Programming/ADS/HW4/vector
+algorithm
+/home/rozi/Documents/Programming/ADS/HW4/algorithm
+stack
+/home/rozi/Documents/Programming/ADS/HW4/stack
+Point.h
+/home/rozi/Documents/Programming/ADS/HW4/Point.h
+

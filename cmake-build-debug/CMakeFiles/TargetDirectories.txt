@@ -1,0 +1,3 @@
+/home/rozi/Documents/Programming/ADS/HW4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rozi/Documents/Programming/ADS/HW4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rozi/Documents/Programming/ADS/HW4/cmake-build-debug/CMakeFiles/HW4.dir
